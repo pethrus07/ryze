@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RYZE — Brand Identity Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #FFB700;
+  --gold-light: #FFD666;
+  --gold-dark: #CC9200;
+  --purple: #6A28C9;
+  --purple-light: #8B5CF6;
+  --purple-dark: #4C1D95;
+  --black: #0D0D0D;
+  --gray-900: #1A1A1A;
+  --gray-800: #2D2D2D;
+  --gray-700: #404040;
+  --gray-600: #525252;
+  --gray-500: #6B6B6B;
+  --gray-400: #8A8A8A;
+  --gray-300: #B0B0B0;
+  --gray-200: #D4D4D4;
+  --gray-100: #EBEBEB;
+  --gray-50: #F5F5F5;
+  --white: #FAFAFA;
+  --success: #22C55E;
+  --error: #EF4444;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--gray-50);
+  color: var(--black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,13,13,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,183,0,0.15);
+  padding: 0 40px;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo svg { height: 28px; width: auto; }
+.nav-logo span { color: var(--white); font-weight: 700; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: var(--gray-400); text-decoration: none; font-size: 12px;
+  font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--black);
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 100px 40px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(106,40,201,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 30% 70%, rgba(255,183,0,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-logo { position: relative; margin-bottom: 48px; }
+.hero-logo svg { height: 160px; width: auto; transform: translateY(-8%); }
+.hero-title {
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.hero-title span { color: var(--gold); }
+.hero-sub {
+  color: var(--gray-400);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.7;
+}
+.hero-meta {
+  margin-top: 60px;
+  display: flex; gap: 48px;
+  color: var(--gray-600);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+.section-dark {
+  background: var(--black);
+  max-width: 100%;
+  padding: 100px 40px;
+}
+.section-dark .section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-gold {
+  background: var(--gold);
+  max-width: 100%;
+  padding: 80px 40px;
+}
+.section-gold .section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.section-dark .section-num { color: var(--gold); }
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+.section-dark .section-title { color: var(--white); }
+.section-desc {
+  font-size: 15px;
+  color: var(--gray-500);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 56px;
+}
+.section-dark .section-desc { color: var(--gray-400); }
+
+/* ─── LOGO ANALYSIS ─── */
+.logo-analysis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.logo-display {
+  background: var(--gray-900);
+  border-radius: 16px;
+  padding: 64px;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 1;
+  position: relative;
+}
+.logo-display svg { height: 200px; width: auto; transform: translateY(-8%); }
+.logo-display::after {
+  content: 'SÍMBOLO PRINCIPAL';
+  position: absolute; bottom: 20px; left: 20px;
+  font-size: 9px; letter-spacing: 2px; color: var(--gray-600);
+  font-weight: 500;
+}
+.logo-insights { display: flex; flex-direction: column; gap: 24px; }
+.insight {
+  padding: 24px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+}
+.insight-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--gold-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.insight p {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ─── COLORS ─── */
+.color-group { margin-bottom: 48px; }
+.color-group-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gray-500);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.section-dark .color-group-title { color: var(--gray-400); }
+.color-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.color-card {
+  flex: 1; min-width: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray-800);
+}
+.color-swatch { height: 80px; position: relative; }
+.color-info { padding: 14px 16px; }
+.color-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.color-hex { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-400); }
+.color-use { font-size: 11px; color: var(--gray-500); margin-top: 6px; line-height: 1.5; }
+
+/* ─── TYPOGRAPHY ─── */
+.type-specimen {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 32px 0;
+  align-items: baseline;
+}
+.type-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--gray-400);
+  letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+}
+.type-main {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.type-details { font-size: 12px; color: var(--gray-500); line-height: 1.7; }
+.type-details code {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--gray-100);
+  padding: 2px 6px; border-radius: 4px; font-size: 11px;
+}
+
+/* ─── USAGE GRID ─── */
+.usage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.usage-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray-100);
+}
+.usage-preview {
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+}
+.usage-preview svg { height: 60px; width: auto; transform: translateY(-8%); }
+.download-preview > svg { transform: translateY(-8%); }
+.usage-body { padding: 20px 24px; }
+.usage-tag {
+  display: inline-block;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 10px; border-radius: 4px; margin-bottom: 8px;
+}
+.tag-correct { background: rgba(34,197,94,0.1); color: var(--success); }
+.tag-avoid { background: rgba(239,68,68,0.1); color: var(--error); }
+.usage-body p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+/* ─── ELEMENTS ─── */
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.element-card {
+  background: var(--gray-900);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+}
+.element-visual {
+  height: 120px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.element-name { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.element-desc { font-size: 12px; color: var(--gray-400); line-height: 1.6; }
+
+/* ─── RULE GRID ─── */
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+.rule-card {
+  padding: 32px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+}
+.rule-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px; font-weight: 600; margin-bottom: 12px;
+  color: var(--black);
+}
+.rule-card p, .rule-card li { font-size: 13px; color: var(--gray-500); line-height: 1.7; }
+.rule-card ul { list-style: none; padding: 0; }
+.rule-card li { padding: 6px 0; padding-left: 16px; position: relative; }
+.rule-card li::before {
+  content: ''; position: absolute; left: 0; top: 14px;
+  width: 6px; height: 1px; background: var(--gold);
+}
+.section-dark .rule-card { background: var(--gray-900); border-color: var(--gray-800); }
+.section-dark .rule-card h4 { color: var(--white); }
+.section-dark .rule-card p, .section-dark .rule-card li { color: var(--gray-400); }
+
+/* ─── DOWNLOAD SECTION ─── */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.download-card {
+  background: var(--gray-900);
+  border: 1px solid var(--gray-800);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.download-card:hover { border-color: var(--gold); }
+.download-preview {
+  height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.download-preview svg { height: 56px; width: auto; transform: translateY(-8%); }
+.download-body { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+.download-info {}
+.download-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+.download-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gray-500); }
+.download-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  background: var(--gold);
+  border: none; border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+.download-btn:hover { transform: scale(1.08); background: var(--gold-light); }
+.download-btn svg { width: 16px; height: 16px; }
+
+.download-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--gold);
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 20px; margin-top: 48px; font-weight: 500;
+}
+.download-category:first-of-type { margin-top: 0; }
+
+/* ─── MOOD ─── */
+.mood-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 48px;
+  height: 200px;
+}
+.mood-cell {
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 20px 16px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+
+/* ─── APP EXAMPLES ─── */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.app-card {
+  background: var(--gray-900);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--gray-800);
+}
+.app-card-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--gold);
+  letter-spacing: 2px; margin-bottom: 12px;
+}
+.app-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--white); margin-bottom: 12px;
+}
+.app-card p { font-size: 13px; color: var(--gray-400); line-height: 1.7; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--black);
+  padding: 48px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255,183,0,0.1);
+}
+.footer p { font-size: 12px; color: var(--gray-600); letter-spacing: 1px; }
+.footer .footer-logo { margin-bottom: 16px; }
+.footer .footer-logo svg { height: 32px; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .section, .section-dark, .section-gold { padding: 60px 20px; }
+  .logo-analysis { grid-template-columns: 1fr; }
+  .elements-grid { grid-template-columns: 1fr; }
+  .type-specimen { grid-template-columns: 1fr; gap: 8px; }
+  .hero-meta { flex-direction: column; gap: 16px; align-items: center; }
+  .mood-strip { grid-template-columns: 1fr; height: auto; }
+  .mood-cell { height: 60px; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+    </svg>
+    <span>RYZE</span>
+  </div>
+  <div class="nav-links">
+    <a href="#analise">Análise</a>
+    <a href="#cores">Cores</a>
+    <a href="#tipo">Tipografia</a>
+    <a href="#uso">Logo</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#social">Social</a>
+    <a href="#mood">Mood</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">
+    <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+    </svg>
+  </div>
+  <h1 class="hero-title">Brand Identity <span>Guide</span></h1>
+  <p class="hero-sub">Manual de identidade visual da marca RYZE. Diretrizes completas para aplicação consistente em todos os pontos de contato.</p>
+  <div class="hero-meta">
+    <span>Versão 1.1</span>
+    <span>Abril 2026</span>
+    <span>Confidencial</span>
+  </div>
+</section>
+
+<!-- 0. LOGO ANALYSIS -->
+<section class="section" id="analise">
+  <div class="section-num">00 — Análise do Símbolo</div>
+  <h2 class="section-title">Decodificação Geométrica</h2>
+  <p class="section-desc">O símbolo RYZE é uma seta ascendente — o gesto visual mais direto de crescimento. Cada ângulo e recorte reforça essa mensagem.</p>
+  
+  <div class="logo-analysis">
+    <div class="logo-display">
+      <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+      </svg>
+    </div>
+    <div class="logo-insights">
+      <div class="insight">
+        <div class="insight-label">Forma base — Seta ascendente</div>
+        <p>O símbolo é uma <strong>seta apontando para cima</strong>, construída com vértice no ponto mais alto (200,0) e base larga na parte inferior. A forma é o significado: RYZE = subir, elevar, crescer. Não há metáfora — a seta é literal, direta, impossível de confundir. O movimento ascendente é o DNA visual da marca.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Geometria Angular — Fragmentação Controlada</div>
+        <p>A seta não é sólida — ela é cortada internamente por recortes angulares que criam negativos geométricos. Esses recortes a ~35–55° simulam um <strong>gráfico de crescimento fragmentado</strong>, como se a ascensão tivesse etapas visíveis. Cada bloco de massa representa um degrau de progresso. Tudo reto, sem curvas — precisão de engenharia.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Conceito Narrativo</div>
+        <p>A seta fragmentada funciona como <strong>uma promessa visual de resultado</strong>: o negócio do cliente vai subir, e a RYZE é o veículo. Os cortes internos evitam que a forma pareça genérica — adicionam personalidade e caráter tecnológico sem perder a clareza da direção ascendente. É uma seta que parece ter sido projetada por um sistema, não desenhada à mão.</p>
+      </div>
+      <div class="insight">
+        <div class="insight-label">Proporção e Uso</div>
+        <p>Viewbox 400×520 — proporção ~1:1.3 (retângulo vertical). Ideal para uso como ícone, favicon ou marca d'água. Os recortes internos criam 3 zonas visuais de peso equilibrado, garantindo leitura mesmo em tamanhos reduzidos. A ponta afilada no topo funciona como ponto focal natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1. PALETA DE CORES -->
+<section class="section-dark" id="cores">
+  <div class="section-inner">
+    <div class="section-num">01 — Paleta de Cores</div>
+    <h2 class="section-title">Sistema Cromático</h2>
+    <p class="section-desc">Paleta expandida com hierarquia clara. Dourado como energia e resultado. Roxo como tecnologia e diferenciação. Neutros como estrutura e legibilidade.</p>
+    
+    <div class="color-group">
+      <div class="color-group-title">Cores Primárias</div>
+      <div class="color-row">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #0D0D0D; border-bottom:1px solid #2D2D2D;"></div>
+          <div class="color-info">
+            <div class="color-name">Black Core</div>
+            <div class="color-hex">#0D0D0D</div>
+            <div class="color-use">Base de todo material. Fundos, textos, autoridade.</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFB700;"></div>
+          <div class="color-info">
+            <div class="color-name">Gold Primary</div>
+            <div class="color-hex">#FFB700</div>
+            <div class="color-use">Destaque principal. CTAs, títulos de impacto, a logo.</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #6A28C9;"></div>
+          <div class="color-info">
+            <div class="color-name">Purple Accent</div>
+            <div class="color-hex">#6A28C9</div>
+            <div class="color-use">Tecnologia e diferenciação. Apoio, ícones, gradientes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-title">Cores Secundárias (Extensões)</div>
+      <div class="color-row">
+        <div class="color-card">
+          <div class="color-swatch" style="background: #FFD666;"></div>
+          <div class="color-info">
+            <div class="color-name">Gold Light</div>
+            <div class="color-hex">#FFD666</div>
+            <div class="color-use">Backgrounds suaves, hovers, variações claras.</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #CC9200;"></div>
+          <div class="color-info">
+            <div class="color-name">Gold Dark</div>
+            <div class="color-hex">#CC9200</div>
+            <div class="color-use">Texto sobre fundo claro, contraste acessível.</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #8B5CF6;"></div>
+          <div class="color-info">
+            <div class="color-name">Purple Light</div>
+            <div class="color-hex">#8B5CF6</div>
+            <div class="color-use">Hovers, elementos interativos, destaques secundários.</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: #4C1D95;"></div>
+          <div class="color-info">
+            <div class="color-name">Purple Deep</div>
+            <div class="color-hex">#4C1D95</div>
+            <div class="color-use">Fundos escuros alternativos, cards premium.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-title">Escala de Neutros</div>
+      <div class="color-row">
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #1A1A1A;"></div>
+          <div class="color-info"><div class="color-name">900</div><div class="color-hex">#1A1A1A</div></div>
+        </div>
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #2D2D2D;"></div>
+          <div class="color-info"><div class="color-name">800</div><div class="color-hex">#2D2D2D</div></div>
+        </div>
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #525252;"></div>
+          <div class="color-info"><div class="color-name">600</div><div class="color-hex">#525252</div></div>
+        </div>
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #8A8A8A;"></div>
+          <div class="color-info"><div class="color-name">400</div><div class="color-hex">#8A8A8A</div></div>
+        </div>
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #D4D4D4;"></div>
+          <div class="color-info"><div class="color-name">200</div><div class="color-hex">#D4D4D4</div></div>
+        </div>
+        <div class="color-card" style="min-width:100px; flex:0.7;">
+          <div class="color-swatch" style="background: #F5F5F5;"></div>
+          <div class="color-info"><div class="color-name">50</div><div class="color-hex">#F5F5F5</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-title">Proporção de Uso Recomendada</div>
+      <div style="display:flex; height:40px; border-radius:8px; overflow:hidden; max-width:600px;">
+        <div style="flex:55; background:#0D0D0D;"></div>
+        <div style="flex:20; background:#FFB700;"></div>
+        <div style="flex:10; background:#6A28C9;"></div>
+        <div style="flex:15; background:#525252;"></div>
+      </div>
+      <div style="display:flex; gap:24px; margin-top:12px; max-width:600px;">
+        <span style="font-size:11px; color:var(--gray-500);">Preto 55%</span>
+        <span style="font-size:11px; color:var(--gray-500);">Dourado 20%</span>
+        <span style="font-size:11px; color:var(--gray-500);">Roxo 10%</span>
+        <span style="font-size:11px; color:var(--gray-500);">Neutros 15%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TIPOGRAFIA -->
+<section class="section" id="tipo">
+  <div class="section-num">02 — Sistema Tipográfico</div>
+  <h2 class="section-title">Tipografia</h2>
+  <p class="section-desc">Três famílias com funções claras. Nenhuma redundância, nenhuma ambiguidade. Cada fonte serve um propósito.</p>
+  
+  <div class="type-specimen">
+    <div class="type-label">Display / Títulos</div>
+    <div class="type-sample">
+      <div class="type-main" style="font-family:'Space Grotesk',sans-serif;">Space Grotesk</div>
+      <p class="type-details">
+        Geométrica, moderna, com personalidade técnica sem ser fria. Usar em <code>700 Bold</code> para títulos principais e <code>600 Semi</code> para subtítulos.<br>
+        Tamanhos: H1 <code>40–56px</code> · H2 <code>28–36px</code> · H3 <code>20–24px</code><br>
+        Letter-spacing: <code>-0.5px</code> a <code>-1px</code> para títulos grandes.<br>
+        <strong>Google Fonts:</strong> <code>fonts.google.com/specimen/Space+Grotesk</code>
+      </p>
+    </div>
+  </div>
+  
+  <div class="type-specimen">
+    <div class="type-label">Corpo / Interface</div>
+    <div class="type-sample">
+      <div class="type-main" style="font-family:'Plus Jakarta Sans',sans-serif; font-size:28px;">Plus Jakarta Sans</div>
+      <p class="type-details">
+        Humanista e legível. Profissional sem ser corporativa. Usar em <code>400 Regular</code> para corpo, <code>500 Medium</code> para labels e <code>600 Semi</code> para ênfase.<br>
+        Tamanhos: Body <code>15–16px</code> · Small <code>13–14px</code> · Caption <code>11–12px</code><br>
+        Line-height: <code>1.6–1.7</code> para leitura confortável.<br>
+        <strong>Google Fonts:</strong> <code>fonts.google.com/specimen/Plus+Jakarta+Sans</code>
+      </p>
+    </div>
+  </div>
+  
+  <div class="type-specimen">
+    <div class="type-label">Dados / Código</div>
+    <div class="type-sample">
+      <div class="type-main" style="font-family:'JetBrains Mono',monospace; font-size:24px;">JetBrains Mono</div>
+      <p class="type-details">
+        Monoespaçada técnica. Usar para números, métricas, códigos, labels técnicos e detalhes de apoio.<br>
+        Tamanhos: <code>10–12px</code> · Sempre em <code>uppercase</code> com <code>letter-spacing: 2–3px</code> para labels.<br>
+        <strong>Google Fonts:</strong> <code>fonts.google.com/specimen/JetBrains+Mono</code>
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:32px; background:var(--gray-50); border-radius:12px; border:1px solid var(--gray-100);">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold-dark); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;">Hierarquia em ação</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--black); letter-spacing:-0.5px; margin-bottom:8px;">Seu negócio no próximo nível</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; color:var(--gray-700); margin-bottom:12px;">Sites, automações e presença digital que geram resultado.</div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:15px; color:var(--gray-500); line-height:1.7; max-width:560px;">A RYZE entrega soluções digitais desenhadas para negócios locais que querem crescer com consistência e profissionalismo — sem complexidade desnecessária.</div>
+  </div>
+</section>
+
+<!-- 3. DIREÇÃO VISUAL -->
+<section class="section-gold">
+  <div class="section-inner">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--black); letter-spacing:3px; text-transform:uppercase; margin-bottom:12px; opacity:0.6;">03 — Direção Visual</div>
+    <h2 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,3.5vw,40px); font-weight:700; color:var(--black); margin-bottom:24px;">Clean. Moderno. Calculado.</h2>
+    <p style="font-size:15px; color:var(--black); opacity:0.7; max-width:600px; line-height:1.7; margin-bottom:40px;">A RYZE não é uma marca divertida. Não é uma marca fria. É uma marca que transmite: "nós sabemos o que estamos fazendo, e o resultado aparece."</p>
+    
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;">
+      <div style="padding:24px; background:rgba(0,0,0,0.08); border-radius:12px;">
+        <h4 style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:8px;">Princípio 1: Contraste Intencional</h4>
+        <p style="font-size:13px; color:rgba(0,0,0,0.6); line-height:1.7;">Fundo preto com ouro. Muito espaço em branco com um corte dourado. Poucos elementos, mas cada um com peso. Nada de decoração gratuita.</p>
+      </div>
+      <div style="padding:24px; background:rgba(0,0,0,0.08); border-radius:12px;">
+        <h4 style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:8px;">Princípio 2: Dados como Design</h4>
+        <p style="font-size:13px; color:rgba(0,0,0,0.6); line-height:1.7;">Números grandes. Métricas em destaque. Resultados como elemento visual. Quando possível, substitua ilustrações por dados reais do cliente.</p>
+      </div>
+      <div style="padding:24px; background:rgba(0,0,0,0.08); border-radius:12px;">
+        <h4 style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:8px;">Princípio 3: Estrutura Angular</h4>
+        <p style="font-size:13px; color:rgba(0,0,0,0.6); line-height:1.7;">Linhas diagonais derivadas da seta. Cortes a 35° e 55°. Formas triangulares como elemento recorrente. Sempre apontando para cima.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. USO DA LOGO -->
+<section class="section" id="uso">
+  <div class="section-num">04 — Uso da Logo</div>
+  <h2 class="section-title">Regras de Aplicação</h2>
+  <p class="section-desc">A seta RYZE é o ativo mais valioso da marca. Estas regras garantem que ela sempre funcione com impacto e legibilidade.</p>
+  
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-preview" style="background:#0D0D0D;">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+        </svg>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag tag-correct">✓ Uso Principal</span>
+        <p>Seta dourada sobre fundo preto. Aplicação padrão — usar em 80% dos casos.</p>
+      </div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-preview" style="background:#FAFAFA; border-bottom:1px solid #EBEBEB;">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#0D0D0D"/>
+        </svg>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag tag-correct">✓ Versão Monocromática</span>
+        <p>Seta preta sobre fundo claro. Para documentos e contextos com restrição de cor.</p>
+      </div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-preview" style="background:linear-gradient(135deg, #4C1D95, #6A28C9);">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+        </svg>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag tag-correct">✓ Variação Especial</span>
+        <p>Dourado sobre gradiente roxo. Para materiais premium e destaque diferenciado.</p>
+      </div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-preview" style="background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb); opacity:0.4;">
+        <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.5;">
+          <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag tag-avoid">✗ Evitar</span>
+        <p>Nunca usar sobre fundos multicoloridos, fotos sem overlay, ou com cores fora da paleta.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:56px;">
+    <div class="color-group-title" style="color:var(--gray-500);">Área de Proteção</div>
+    <div style="padding:32px; background:var(--gray-50); border-radius:12px; border:1px solid var(--gray-100);">
+      <p style="font-size:14px; color:var(--gray-500); line-height:1.7; max-width:600px;">
+        A área de proteção mínima ao redor da seta equivale a <strong style="color:var(--black);">25% da altura do símbolo</strong> em cada direção. Nenhum texto, ícone ou borda deve invadir essa zona. Tamanho mínimo de reprodução: <strong style="color:var(--black);">24px de altura</strong> em tela, <strong style="color:var(--black);">10mm</strong> em impressão.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. DOWNLOADS -->
+<section class="section-dark" id="downloads">
+  <div class="section-inner">
+    <div class="section-num">05 — Downloads</div>
+    <h2 class="section-title">Arquivos da Marca</h2>
+    <p class="section-desc">Todos os arquivos SVG prontos para uso. Clique para baixar cada variação.</p>
+
+    <div class="download-category">Símbolo — Fundo Transparente</div>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D;">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Símbolo Dourado</div>
+            <div class="download-meta">SVG · FUNDO TRANSPARENTE</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iI0ZGQjcwMCIvPgo8L3N2Zz4K" download="ryze-symbol-gold-transparent.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#FAFAFA;">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#0D0D0D"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Símbolo Preto</div>
+            <div class="download-meta">SVG · FUNDO TRANSPARENTE</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iIzBEMEQwRCIvPgo8L3N2Zz4K" download="ryze-symbol-black-transparent.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D;">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FAFAFA"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Símbolo Branco</div>
+            <div class="download-meta">SVG · FUNDO TRANSPARENTE</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iI0ZBRkFGQSIvPgo8L3N2Zz4K" download="ryze-symbol-white-transparent.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-category">Logo com Fundo</div>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D;">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Gold on Dark</div>
+            <div class="download-meta">SVG · PRINCIPAL</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTIwIiBmaWxsPSIjMEQwRDBEIi8+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iI0ZGQjcwMCIvPgo8L3N2Zz4K" download="ryze-logo-gold-on-dark.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#FAFAFA; border-bottom:1px solid #2D2D2D;">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#0D0D0D"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Black on White</div>
+            <div class="download-meta">SVG · MONOCROMÁTICA</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTIwIiBmaWxsPSIjRkFGQUZBIi8+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iIzBEMEQwRCIvPgo8L3N2Zz4K" download="ryze-logo-black-on-white.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:linear-gradient(135deg, #4C1D95, #6A28C9);">
+          <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/></svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Gold on Purple</div>
+            <div class="download-meta">SVG · PREMIUM</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDQwMCA1MjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0icHVycGxlR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iNDAwIiB5Mj0iNTIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNEMxRDk1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2QTI4QzkiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTIwIiBmaWxsPSJ1cmwoI3B1cnBsZUdyYWQpIi8+CjxwYXRoIGQ9Ik0zMDguNDg0IDI4Mi4wNkwyNDQuMDcyIDM1Ny41OTNIMjExTDIzMS4xOCAzOTJIMzUwLjc3TDQwMCA1MjBIMjQ0LjE1OUwxNzEuNjUyIDM1Mi42MDVMMTc3LjkzMSAzNDIuNjYxTDIyNSAyNTQuNzM2TDIxMS44OTYgMjI2Ljk5N0wxOTEuNDM5IDE4MC41NThMMTU5Ljk1NyAyNjcuNDgzTDEyNy4zMTUgMzU0LjMwMUwxMTIuODY4IDM5NC43MjlIMTM5Ljk5MkwxOTQuMjU0IDUyMEgwTDIwMCAwTDMwOC40ODQgMjgyLjA2WiIgZmlsbD0iI0ZGQjcwMCIvPgo8L3N2Zz4K" download="ryze-logo-gold-on-purple.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-category">Elementos Gráficos</div>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D; padding:20px;">
+          <svg width="120" height="80" viewBox="0 0 800 400" fill="none">
+            <line x1="0" y1="400" x2="560" y2="0" stroke="#FFB700" stroke-width="3"/>
+            <line x1="80" y1="400" x2="640" y2="0" stroke="#FFB700" stroke-width="2" opacity="0.5"/>
+            <line x1="160" y1="400" x2="720" y2="0" stroke="#FFB700" stroke-width="1.5" opacity="0.25"/>
+          </svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Corte Diagonal</div>
+            <div class="download-meta">SVG · ELEMENTO</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxsaW5lIHgxPSIwIiB5MT0iNDAwIiB4Mj0iNTYwIiB5Mj0iMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjgwIiB5MT0iNDAwIiB4Mj0iNjQwIiB5Mj0iMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CjxsaW5lIHgxPSIxNjAiIHkxPSI0MDAiIHgyPSI3MjAiIHkyPSIwIiBzdHJva2U9IiNGRkI3MDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4yNSIvPgo8bGluZSB4MT0iMjQwIiB5MT0iNDAwIiB4Mj0iODAwIiB5Mj0iMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xMiIvPgo8L3N2Zz4K" download="ryze-element-diagonal-cut.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D; padding:20px;">
+          <svg width="140" height="80" viewBox="0 0 600 300" fill="none">
+            <rect x="40" y="200" width="60" height="80" fill="#FFB700" opacity="0.2"/>
+            <rect x="140" y="160" width="60" height="120" fill="#FFB700" opacity="0.35"/>
+            <rect x="240" y="110" width="60" height="170" fill="#FFB700" opacity="0.5"/>
+            <rect x="340" y="65" width="60" height="215" fill="#FFB700" opacity="0.7"/>
+            <rect x="440" y="20" width="60" height="260" fill="#FFB700" opacity="0.85"/>
+          </svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Barras de Crescimento</div>
+            <div class="download-meta">SVG · ELEMENTO</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDYwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHg9IjQwIiB5PSIyMDAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI0ZGQjcwMCIgb3BhY2l0eT0iMC4yIi8+CjxyZWN0IHg9IjE0MCIgeT0iMTYwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjRkZCNzAwIiBvcGFjaXR5PSIwLjM1Ii8+CjxyZWN0IHg9IjI0MCIgeT0iMTEwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTcwIiBmaWxsPSIjRkZCNzAwIiBvcGFjaXR5PSIwLjUiLz4KPHJlY3QgeD0iMzQwIiB5PSI2NSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjIxNSIgZmlsbD0iI0ZGQjcwMCIgb3BhY2l0eT0iMC43Ii8+CjxyZWN0IHg9IjQ0MCIgeT0iMjAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIyNjAiIGZpbGw9IiNGRkI3MDAiIG9wYWNpdHk9IjAuODUiLz4KPHJlY3QgeD0iNTQwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iMjgwIiBmaWxsPSIjRkZCNzAwIi8+Cjwvc3ZnPgo=" download="ryze-element-growth-bars.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D; padding:20px;">
+          <svg width="100" height="80" viewBox="0 0 400 400" fill="none">
+            <polygon points="200,20 380,360 20,360" stroke="#FFB700" stroke-width="2" fill="none"/>
+            <polygon points="200,60 350,340 50,340" stroke="#6A28C9" stroke-width="1.5" fill="none" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Frame Triangular</div>
+            <div class="download-meta">SVG · ELEMENTO</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cjxwb2x5Z29uIHBvaW50cz0iMjAwLDIwIDM4MCwzNjAgMjAsMzYwIiBzdHJva2U9IiNGRkI3MDAiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIi8+Cjxwb2x5Z29uIHBvaW50cz0iMjAwLDYwIDM1MCwzNDAgNTAsMzQwIiBzdHJva2U9IiM2QTI4QzkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC40Ii8+Cjwvc3ZnPgo=" download="ryze-element-triangle-frame.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:#0D0D0D; padding:20px;">
+          <svg width="120" height="80" viewBox="0 0 800 600" fill="none">
+            <path d="M0 600 L400 0 L800 600" stroke="#FFB700" stroke-width="1" opacity="0.15"/>
+            <path d="M100 600 L400 60 L700 600" stroke="#FFB700" stroke-width="1" opacity="0.1"/>
+            <path d="M200 600 L400 120 L600 600" stroke="#FFB700" stroke-width="1" opacity="0.07"/>
+          </svg>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Textura Angular</div>
+            <div class="download-meta">SVG · BACKGROUND</div>
+          </div>
+          <a class="download-btn" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDgwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMEQwRDBEIi8+CjxwYXRoIGQ9Ik0wIDYwMCBMNDAwIDAgTDgwMCA2MDAiIHN0cm9rZT0iI0ZGQjcwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDYiLz4KPHBhdGggZD0iTTEwMCA2MDAgTDQwMCA2MCBMNzAwIDYwMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4wNSIvPgo8cGF0aCBkPSJNMjAwIDYwMCBMNDAwIDEyMCBMNjAwIDYwMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4wNCIvPgo8cGF0aCBkPSJNLTIwMCA2MDAgTDQwMCAtMTIwIEwxMDAwIDYwMCIgc3Ryb2tlPSIjRkZCNzAwIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4wNCIvPgo8cGF0aCBkPSJNLTEwMCA2MDAgTDQwMCAtNjAgTDkwMCA2MDAiIHN0cm9rZT0iI0ZGQjcwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDMiLz4KPC9zdmc+Cg==" download="ryze-element-angular-texture.svg" title="Download">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="download-category">Tipografia — Links de Download</div>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-preview" style="background:var(--gray-900); padding:20px;">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--white);">Aa</span>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Space Grotesk</div>
+            <div class="download-meta">GOOGLE FONTS · DISPLAY</div>
+          </div>
+          <a class="download-btn" href="https://fonts.google.com/specimen/Space+Grotesk" target="_blank" rel="noopener" title="Abrir Google Fonts">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3L7 9" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:var(--gray-900); padding:20px;">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:28px; font-weight:600; color:var(--white);">Aa</span>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">Plus Jakarta Sans</div>
+            <div class="download-meta">GOOGLE FONTS · CORPO</div>
+          </div>
+          <a class="download-btn" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" target="_blank" rel="noopener" title="Abrir Google Fonts">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3L7 9" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview" style="background:var(--gray-900); padding:20px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:500; color:var(--white);">Aa</span>
+        </div>
+        <div class="download-body">
+          <div class="download-info">
+            <div class="download-name">JetBrains Mono</div>
+            <div class="download-meta">GOOGLE FONTS · DADOS</div>
+          </div>
+          <a class="download-btn" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener" title="Abrir Google Fonts">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3L7 9" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ELEMENTOS GRÁFICOS -->
+<section class="section" id="elementos">
+  <div class="section-num">06 — Elementos Gráficos</div>
+  <h2 class="section-title">Vocabulário Visual</h2>
+  <p class="section-desc">Formas e recursos derivados da geometria da seta ascendente. Usados para criar consistência em todos os materiais.</p>
+  
+  <div class="elements-grid">
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <line x1="0" y1="120" x2="120" y2="0" stroke="#FFB700" stroke-width="2"/>
+          <line x1="20" y1="120" x2="120" y2="20" stroke="#FFB700" stroke-width="1" opacity="0.4"/>
+          <line x1="40" y1="120" x2="120" y2="40" stroke="#FFB700" stroke-width="0.5" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="element-name">Corte Diagonal</div>
+      <div class="element-desc">Linhas ascendentes derivadas dos ângulos da seta. Usar como divisores de seção ou overlay em imagens.</div>
+    </div>
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <polygon points="60,5 115,100 5,100" stroke="#FFB700" stroke-width="1.5" fill="none"/>
+          <polygon points="60,25 100,95 20,95" stroke="#6A28C9" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="element-name">Frame Triangular</div>
+      <div class="element-desc">Triângulos como contenedores de conteúdo. Sempre com vértice no topo — ecoando a direção da seta.</div>
+    </div>
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="10" y="80" width="16" height="30" fill="#FFB700" opacity="0.3"/>
+          <rect x="32" y="60" width="16" height="50" fill="#FFB700" opacity="0.5"/>
+          <rect x="54" y="40" width="16" height="70" fill="#FFB700" opacity="0.7"/>
+          <rect x="76" y="20" width="16" height="90" fill="#FFB700" opacity="0.85"/>
+          <rect x="98" y="5" width="16" height="105" fill="#FFB700"/>
+        </svg>
+      </div>
+      <div class="element-name">Barras de Crescimento</div>
+      <div class="element-desc">Gráficos ascendentes como recurso visual. Expressar progresso e resultado sem precisar de dados reais.</div>
+    </div>
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="0" y="0" width="120" height="120" fill="#FFB700" opacity="0.08"/>
+          <path d="M0 120 L60 0 L120 120" stroke="#FFB700" stroke-width="0.5" opacity="0.15"/>
+          <path d="M20 120 L60 20 L100 120" stroke="#FFB700" stroke-width="0.5" opacity="0.1"/>
+        </svg>
+      </div>
+      <div class="element-name">Textura Angular</div>
+      <div class="element-desc">Padrão sutil de linhas da seta para fundos. Opacidade 5–10% sobre fundos escuros para profundidade.</div>
+    </div>
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="0" y="52" width="120" height="2" fill="#FFB700"/>
+          <rect x="0" y="52" width="50" height="2" fill="#6A28C9"/>
+          <circle cx="50" cy="53" r="4" fill="#6A28C9"/>
+        </svg>
+      </div>
+      <div class="element-name">Linha de Progresso</div>
+      <div class="element-desc">Barra bicolor como indicador visual. Ouro como meta, roxo como progresso. Para dashboards e relatórios.</div>
+    </div>
+    <div class="element-card">
+      <div class="element-visual">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="20" y="20" width="80" height="80" fill="none" stroke="#FFB700" stroke-width="1"/>
+          <line x1="20" y1="20" x2="60" y2="60" stroke="#FFB700" stroke-width="0.5" opacity="0.3"/>
+          <line x1="100" y1="20" x2="60" y2="60" stroke="#FFB700" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="element-name">Grid Angular</div>
+      <div class="element-desc">Grid com diagonais internas. Base para layouts de slides e composições de propostas comerciais.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. LAYOUT -->
+<section class="section-dark">
+  <div class="section-inner">
+    <div class="section-num">07 — Layout para Apresentações</div>
+    <h2 class="section-title">Estrutura de Slides e Propostas</h2>
+    <p class="section-desc">Regras de composição para materiais comerciais. Aplicar consistentemente em todo deck, proposta ou documento.</p>
+    
+    <div class="rule-grid">
+      <div class="rule-card">
+        <h4>Grid Base</h4>
+        <ul>
+          <li>Grid de 12 colunas com gutter de 24px</li>
+          <li>Margens externas: 48px em desktop, 24px em mobile</li>
+          <li>Conteúdo principal em 8 colunas (alinhado à esquerda)</li>
+          <li>Coluna auxiliar de 4 colunas para dados ou ícones</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>Slide de Capa</h4>
+        <ul>
+          <li>Fundo preto (#0D0D0D) — nunca branco</li>
+          <li>Seta centralizada no topo a 30% da altura</li>
+          <li>Título em Space Grotesk 700, 48px, dourado</li>
+          <li>Subtítulo em Plus Jakarta Sans 400, 16px, gray-400</li>
+          <li>Data e confidencialidade no rodapé, JetBrains Mono 10px</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>Slides de Conteúdo</h4>
+        <ul>
+          <li>Título alinhado à esquerda, Space Grotesk 600, 28px</li>
+          <li>Corpo em Plus Jakarta Sans 400, 15px, cor gray-600</li>
+          <li>Máximo de 6 linhas de corpo por slide</li>
+          <li>Um dado de impacto por slide (número grande em dourado)</li>
+          <li>Corte diagonal dourado no canto inferior direito como assinatura</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>Propostas Comerciais</h4>
+        <ul>
+          <li>Capa preta com seta + nome do cliente</li>
+          <li>Páginas internas em fundo branco (#FAFAFA)</li>
+          <li>Header com linha dourada de 2px no topo de cada página</li>
+          <li>Preço/investimento sempre em destaque: número grande + dourado</li>
+          <li>CTA final em bloco preto com texto dourado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. REDES SOCIAIS -->
+<section class="section" id="social">
+  <div class="section-num">08 — Redes Sociais</div>
+  <h2 class="section-title">Direção para Social Media</h2>
+  <p class="section-desc">Formatos, estrutura e regras para posts e capas. Orientado a consistência visual e conversão.</p>
+  
+  <div class="rule-grid">
+    <div class="rule-card">
+      <h4>Posts de Feed (1080×1080)</h4>
+      <ul>
+        <li>Fundo predominante: preto ou roxo profundo</li>
+        <li>Título em Space Grotesk Bold, máx. 8 palavras</li>
+        <li>Um número de impacto grande (ex: "+340% de acessos")</li>
+        <li>Seta no canto inferior direito, altura 32px</li>
+        <li>Corte diagonal dourado como assinatura no canto</li>
+        <li>Nunca mais de 3 elementos textuais por post</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h4>Stories (1080×1920)</h4>
+      <ul>
+        <li>Fundo preto com texto grande no centro</li>
+        <li>Uma frase curta por story — máximo 6 palavras</li>
+        <li>Palavra-chave em dourado, resto em branco</li>
+        <li>CTA no terço inferior com seta angular</li>
+        <li>Usar barras de crescimento como recurso visual</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h4>Capas de Destaque</h4>
+      <ul>
+        <li>Formato circular: fundo preto, ícone em linha fina dourada</li>
+        <li>Sem texto — apenas ícone representativo</li>
+        <li>Espessura de traço: 1.5–2px</li>
+        <li>Consistência: todos os destaques seguem o mesmo estilo</li>
+      </ul>
+    </div>
+    <div class="rule-card">
+      <h4>Capa do Perfil (LinkedIn/YouTube)</h4>
+      <ul>
+        <li>Fundo preto com gradiente sutil de roxo no canto</li>
+        <li>Seta à esquerda + tagline à direita</li>
+        <li>Linha dourada de 2px como separador horizontal</li>
+        <li>Tagline sugerida: "Soluções digitais para negócios locais"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:32px; background:var(--gray-50); border-radius:12px; border:1px solid var(--gray-100);">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold-dark); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;">Tom de voz para legendas</div>
+    <p style="font-size:14px; color:var(--gray-500); line-height:1.7;">
+      Direto, sem enrolação. Frases curtas. Foco em resultado. Evitar jargões de marketing genérico ("impulsione", "transforme", "revolucione"). Preferir verbos concretos: "aumentou", "reduziu", "automatizou". Usar números sempre que possível. Sem emojis em excesso — máximo 1 por legenda, se necessário.
+    </p>
+  </div>
+</section>
+
+<!-- 9. MOOD VISUAL -->
+<section class="section-dark" id="mood">
+  <div class="section-inner">
+    <div class="section-num">09 — Mood Visual</div>
+    <h2 class="section-title">Como a Marca Deve Parecer</h2>
+    <p class="section-desc">A sensação visual que cada ponto de contato da RYZE deve transmitir. Referência para qualquer decisão criativa.</p>
+    
+    <div class="mood-strip">
+      <div class="mood-cell" style="background:var(--black); color:var(--gold);">Precisão</div>
+      <div class="mood-cell" style="background:var(--gray-900); color:var(--white);">Autoridade</div>
+      <div class="mood-cell" style="background:var(--purple-dark); color:var(--gold-light);">Tecnologia</div>
+      <div class="mood-cell" style="background:var(--gold); color:var(--black);">Resultado</div>
+      <div class="mood-cell" style="background:var(--gray-800); color:var(--gray-300);">Clareza</div>
+    </div>
+
+    <div class="rule-grid">
+      <div class="rule-card">
+        <h4>A RYZE parece...</h4>
+        <ul>
+          <li>Uma consultoria de tecnologia que entende de negócios</li>
+          <li>Um dashboard limpo mostrando métricas subindo</li>
+          <li>Uma proposta comercial que você lê em 3 minutos e assina</li>
+          <li>Um site que carrega rápido e converte</li>
+          <li>Competência sem arrogância</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>A RYZE NÃO parece...</h4>
+        <ul>
+          <li>Agência criativa com neon e efeitos 3D</li>
+          <li>Startup descolada com ilustrações coloridas</li>
+          <li>Template genérico de landing page</li>
+          <li>Marca de e-sports ou gaming</li>
+          <li>Empresa corporativa engessada em azul marinho</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>Referências de sensação</h4>
+        <ul>
+          <li>O minimalismo de uma interface bancária premium</li>
+          <li>A precisão de um painel de controle industrial</li>
+          <li>O contraste de um anúncio de relógio de luxo</li>
+          <li>A objetividade de um slide de investidor</li>
+          <li>Preto + ouro = autoridade acessível</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. EXEMPLOS DE APLICAÇÃO -->
+<section class="section">
+  <div class="section-num">10 — Exemplos de Aplicação</div>
+  <h2 class="section-title">Cenários de Uso</h2>
+  <p class="section-desc">Descrições estruturadas de como a identidade funciona em situações reais. Especificação visual executável.</p>
+  
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-card-num">APP 01</div>
+      <h4>Cartão de Visita</h4>
+      <p>Frente: fundo preto, seta dourada centralizada no terço superior, nome em Space Grotesk 600 14px branco, cargo em Plus Jakarta Sans 400 11px gray-400. Verso: fundo preto, dados de contato em coluna à esquerda, QR code no canto inferior direito com borda dourada de 1px. Linha diagonal dourada sutil cruzando o canto superior direito.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-card-num">APP 02</div>
+      <h4>Assinatura de Email</h4>
+      <p>Layout horizontal. Seta 24px de altura à esquerda, separada por linha vertical dourada de 1px. Nome em Semi Bold 14px, cargo em Regular 12px gray-500. Contatos em linha com ícones lineares dourados. Sem imagem, sem banner. Background transparente.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-card-num">APP 03</div>
+      <h4>Site Institucional</h4>
+      <p>Hero dark com gradiente sutil de roxo. Título de impacto em Space Grotesk 56px branco, palavra-chave em dourado. CTA dourado com texto preto ("Fale com a gente"). Seção de serviços com cards em gray-900, ícones lineares dourados. Footer preto com seta e links em gray-400.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-card-num">APP 04</div>
+      <h4>Proposta Comercial (PDF)</h4>
+      <p>Capa preta com seta centralizada + nome do cliente em Space Grotesk 24px branco. Páginas internas brancas com header: seta pequena à esquerda + linha dourada de 2px. Bloco de investimento: fundo preto, valor em dourado 40px. Rodapé com número de página em JetBrains Mono 10px.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-card-num">APP 05</div>
+      <h4>Post de Resultado (Instagram)</h4>
+      <p>1080×1080, fundo preto. No terço superior: label "RESULTADO RYZE" em JetBrains Mono 10px dourado. Centro: número grande "+247% de agendamentos" em Space Grotesk Bold 48px branco, "247%" em dourado. Terço inferior: nome do negócio do cliente em 14px gray-400. Seta no canto inferior direito.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-card-num">APP 06</div>
+      <h4>Relatório Mensal para Cliente</h4>
+      <p>Capa preta com seta + mês/ano. Páginas internas em fundo branco. Métricas em destaque: números em Space Grotesk Bold 32px dourado. Gráficos minimal — linhas finas, cores da paleta, sem grid pesado. Cada seção separada por linha dourada de 1px. Resumo executivo na primeira página com no máximo 4 bullets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">
+    <svg viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg" height="32">
+      <path d="M308.484 282.06L244.072 357.593H211L231.18 392H350.77L400 520H244.159L171.652 352.605L177.931 342.661L225 254.736L211.896 226.997L191.439 180.558L159.957 267.483L127.315 354.301L112.868 394.729H139.992L194.254 520H0L200 0L308.484 282.06Z" fill="#FFB700"/>
+    </svg>
+  </div>
+  <p>RYZE Brand Identity Guide — v1.1 — Abril 2026 — Documento confidencial</p>
+</footer>
+
+</body>
+</html>
