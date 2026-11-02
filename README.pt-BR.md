@@ -46,4 +46,6 @@ git**. Eles vivem em `documentos/<cliente-AAAA-MM>/` só no disco, e o `.gitigno
 
 ## Licença
 
-Marca, logo e guia: todos os direitos reservados. Fontes: SIL Open Font License 1.1 (de seus autores).
+- Código (o guia em HTML em `identidade/`): MIT. Veja [LICENSE](LICENSE).
+- Fontes em `documentos/fontes/`: SIL Open Font License 1.1, de seus autores. Veja [OFL.txt](documentos/fontes/OFL.txt).
+- O nome, o logo e o símbolo RYZE são marca registrada do autor, não licenciada para reuso.

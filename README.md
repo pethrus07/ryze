@@ -46,4 +46,6 @@ git**. They live in `documentos/<client-YYYY-MM>/` on disk only, and `.gitignore
 
 ## License
 
-Brand, logo and guide: all rights reserved. Fonts: SIL Open Font License 1.1 (by their authors).
+- Code (the HTML guide in `identidade/`): MIT. See [LICENSE](LICENSE).
+- Fonts in `documentos/fontes/`: SIL Open Font License 1.1, by their authors. See [OFL.txt](documentos/fontes/OFL.txt).
+- The RYZE name, logo and symbol are a registered mark of the author and are not licensed for reuse.
