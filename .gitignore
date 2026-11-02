@@ -1,0 +1,23 @@
+# Documentos de cliente: privados, nunca no git (contrato, conversa, áudio, dados).
+# Cada cliente fica em documentos/<cliente-AAAA-MM>/ só no disco. As fontes compartilhadas ficam versionadas.
+documentos/*/
+!documentos/fontes/
+
+# Áudio e vídeo (conversas gravadas), em qualquer pasta
+*.ogg
+*.opus
+*.mp3
+*.m4a
+*.wav
+*.aac
+*.flac
+*.mp4
+*.mov
+*.webm
+*.mkv
+
+# Segredos, backups e cache
+.env*
+*.bak
+__pycache__/
+*.pyc
