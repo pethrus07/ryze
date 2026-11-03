@@ -1,4 +1,4 @@
-# RYZE · marca
+# RYZE
 
 [English](README.md) · Português
 
@@ -7,20 +7,7 @@ usadas nos documentos gerados com a marca.
 
 ## Status
 
-Ativo (11/2026). Não há sistema aqui: só arquivos de marca. Sem diagrama.
-
-## O que tem
-
-```
-identidade/
-  Identidade completa.html            guia de marca autocontido (cores, tipografia, logo, uso)
-  logo-montanha.svg                   logo
-  logo-montanha-preto.svg             logo monocromático preto
-  logo-montanha-branco.svg            logo monocromático branco
-  ryze-symbol-gold-transparent.svg    símbolo dourado, fundo transparente
-documentos/
-  fontes/                             TTF estáticos para gerar PDF (Chrome headless)
-```
+Ativo (novembro de 2026). Não há sistema aqui: só arquivos de marca. Sem diagrama.
 
 ## A marca em uma tela
 
@@ -38,7 +25,20 @@ Os arquivos em `documentos/fontes/` são instâncias estáticas (um peso por arq
 Google Fonts. O Chrome headless embute TTF estático de forma previsível no PDF, o que a fonte variável não
 garante. As três famílias são distribuídas sob a SIL Open Font License 1.1.
 
-## Documentos de cliente
+## Pastas
+
+```
+identidade/
+  Identidade completa.html            guia de marca autocontido (cores, tipografia, logo, uso)
+  logo-montanha.svg                   logo
+  logo-montanha-preto.svg             logo monocromático preto
+  logo-montanha-branco.svg            logo monocromático branco
+  ryze-symbol-gold-transparent.svg    símbolo dourado, fundo transparente
+documentos/
+  fontes/                             TTF estáticos para gerar PDF (Chrome headless)
+```
+
+## Decisões e limites conhecidos
 
 Documentos feitos para clientes (resumos, propostas, contratos, conversas transcritas, áudios) **não ficam no
 git**. Eles vivem em `documentos/<cliente-AAAA-MM>/` só no disco, e o `.gitignore` ignora toda subpasta de

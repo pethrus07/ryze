@@ -1,4 +1,4 @@
-# RYZE · brand
+# RYZE
 
 English · [Português](README.pt-BR.md)
 
@@ -7,20 +7,7 @@ the fonts used in documents generated with the brand.
 
 ## Status
 
-Active (2026-11). There is no system here, only brand files. No diagram.
-
-## What is inside
-
-```
-identidade/
-  Identidade completa.html            self-contained brand guide (colours, type, logo, usage)
-  logo-montanha.svg                   logo
-  logo-montanha-preto.svg             black single-colour logo
-  logo-montanha-branco.svg            white single-colour logo
-  ryze-symbol-gold-transparent.svg    gold symbol, transparent background
-documentos/
-  fontes/                             static TTF files for PDF generation (headless Chrome)
-```
+Active (November 2026). There is no system here, only brand files. No diagram.
 
 ## The brand on one screen
 
@@ -38,7 +25,20 @@ The files in `documentos/fontes/` are static instances (one weight per file) of 
 Headless Chrome embeds static TTF into a PDF predictably, which the variable font does not guarantee. All three
 families are distributed under the SIL Open Font License 1.1.
 
-## Client documents
+## Folders
+
+```
+identidade/
+  Identidade completa.html            self-contained brand guide (colours, type, logo, usage)
+  logo-montanha.svg                   logo
+  logo-montanha-preto.svg             black single-colour logo
+  logo-montanha-branco.svg            white single-colour logo
+  ryze-symbol-gold-transparent.svg    gold symbol, transparent background
+documentos/
+  fontes/                             static TTF files for PDF generation (headless Chrome)
+```
+
+## Decisions and known limits
 
 Documents made for clients (summaries, proposals, contracts, transcribed conversations, audio) **are not kept in
 git**. They live in `documentos/<client-YYYY-MM>/` on disk only, and `.gitignore` ignores every subfolder of
